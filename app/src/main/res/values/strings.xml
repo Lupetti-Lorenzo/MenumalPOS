@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Sunmi Printer Demo</string>
+    <string name="app_name">MenumalPOS</string>
+    <string name="MenumalPOS">MenumalPOS</string>
 </resources>
