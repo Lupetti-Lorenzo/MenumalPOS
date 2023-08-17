@@ -1,4 +1,4 @@
-package com.ahmedelsayed.sunmiprinterapp;
+package com.menumal.menumalPOS;
 
 import android.content.Context;
 import android.graphics.Typeface;
@@ -73,7 +73,7 @@ public class Comanda {
         textViewtotale.setLayoutParams(new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT));
-        textViewtotale.setText("Tot " + calculateTotal(items) + "EUR");
+        textViewtotale.setText("Tot " + calculateTotal(items) +  " EUR");
         textViewtotale.setTypeface(null, Typeface.BOLD);
         textViewtotale.setTextSize(20);
         textViewtotale.setGravity(Gravity.CENTER);
@@ -100,7 +100,7 @@ public class Comanda {
                 LinearLayout.LayoutParams.WRAP_CONTENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
         ));
-        oraView.setText(ora);
+        oraView.setText(ora.substring(0, ora.length() - 3));
         oraView.setTypeface(null, Typeface.NORMAL);
         oraView.setTextSize(12);
         oraView.setPadding(0, 8, 0, 8);
@@ -127,7 +127,7 @@ public class Comanda {
                 LinearLayout.LayoutParams.WRAP_CONTENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
         ));
-        numView.setText("x"+numero);
+        numView.setText(" x"+numero);
         numView.setTypeface(null, Typeface.NORMAL);
         numView.setTextSize(13);
         numView.setPadding(0, 8, 0, 8);

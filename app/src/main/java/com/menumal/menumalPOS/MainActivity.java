@@ -1,4 +1,4 @@
-package com.ahmedelsayed.sunmiprinterapp;
+package com.menumal.menumalPOS;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,8 +8,10 @@ import android.os.Bundle;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
+import com.ahmedelsayed.sunmiprinterapp.R;
 import com.ahmedelsayed.sunmiprinterutill.PrintMe;
 
+// per pubblicare app andare su sunmi developers e piazzare l'apk
 public class MainActivity extends AppCompatActivity {
 
     private PrintMe printer;

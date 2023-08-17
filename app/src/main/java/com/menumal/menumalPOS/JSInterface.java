@@ -1,4 +1,4 @@
-package com.ahmedelsayed.sunmiprinterapp;
+package com.menumal.menumalPOS;
 
 import android.content.Context;
 
