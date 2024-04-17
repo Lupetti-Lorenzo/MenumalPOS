@@ -9,6 +9,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.IBinder;
 import android.os.RemoteException;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.ahmedelsayed.sunmiprinterutill.R;
@@ -72,7 +73,6 @@ public class AidlUtil {
 
     public boolean isConnect() {
         return woyouService != null;
-
     }
 
 
@@ -113,7 +113,7 @@ public class AidlUtil {
     }
 
 
-    public List<String> getPrinterInfo(PrinterCallback printerCallback) {
+    public List<String> getPrinterInfo() {
         if (woyouService == null) {
             Toast.makeText(context, R.string.toast_2, Toast.LENGTH_LONG).show();
             return null;
@@ -121,11 +121,11 @@ public class AidlUtil {
 
         List<String> info = new ArrayList<>();
         try {
-            woyouService.getPrintedLength(generateCB(printerCallback));
+//            woyouService.getPrintedLength(generateCB(printerCallback));
             info.add(woyouService.getPrinterSerialNo());
             info.add(woyouService.getPrinterModal());
             info.add(woyouService.getPrinterVersion());
-            info.add(printerCallback.getResult());
+//            info.add(printerCallback.getResult());
             info.add("");
             //info.add(woyouService.getServiceVersion());
             PackageManager packageManager = context.getPackageManager();
@@ -169,7 +169,6 @@ public class AidlUtil {
             return;
         }
 
-
         try {
             woyouService.setAlignment(1, null);
             woyouService.printQRCode(data, modulesize, errorlevel, null);
@@ -185,7 +184,6 @@ public class AidlUtil {
             Toast.makeText(context, R.string.toast_2, Toast.LENGTH_LONG).show();
             return;
         }
-
 
         try {
             woyouService.printBarCode(data, symbology, height, width, textposition, null);

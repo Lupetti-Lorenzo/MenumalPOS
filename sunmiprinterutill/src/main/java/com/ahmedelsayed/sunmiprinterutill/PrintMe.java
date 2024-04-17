@@ -12,13 +12,17 @@ import android.view.ViewGroup;
 
 import com.ahmedelsayed.sunmiprinterutill.model.AidlUtil;
 
+import java.util.List;
+
 public class PrintMe{
 
     public AidlUtil aidlUtil;
+    public List<String> deviceInfo;
 
     public PrintMe(Context context) {
         aidlUtil = AidlUtil.getInstance();
         aidlUtil.connectPrinterService(context);
+        this.deviceInfo = aidlUtil.getPrinterInfo();
     }
 
     public  void sendImageToPrinter(Bitmap bitmap) {

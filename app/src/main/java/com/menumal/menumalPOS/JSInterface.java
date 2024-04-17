@@ -2,6 +2,7 @@ package com.menumal.menumalPOS;
 
 import android.content.Context;
 
+import android.util.Log;
 import android.view.View;
 
 import android.webkit.JavascriptInterface;
@@ -27,9 +28,9 @@ public class JSInterface {
      * Show a toast from the web page
      */
     @JavascriptInterface
-    public void stampa(String json) throws JSONException {
+    public void stampa(String ordine) throws JSONException {
         Comanda.mContext = mContext;
-        View layout = Comanda.creaComanda(json);
+        View layout = Comanda.creaComanda(ordine);
         // stampo la view
         printer.sendViewToPrinter(layout);
     }
